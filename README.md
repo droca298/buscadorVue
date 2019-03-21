@@ -1,29 +1,29 @@
-# abundantumbot
+# Interfaz para un bot (Like as CleverBot)
 
-## Project setup
+## Instalación del proyecto:
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Compilar el proyecto en modo desarrollo:
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Compila el proyecto para pasar a producción:
 ```
 npm run build
 ```
 
-### Run your tests
+### Corre tus test:
 ```
 npm run test
 ```
 
-### Lints and fixes files
+### Lint y arregla archivos
 ```
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Personalizar la configuración
+See [Link a la configuración](https://cli.vuejs.org/config/).
