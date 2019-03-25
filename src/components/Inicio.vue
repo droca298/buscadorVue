@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="bg">
     <h1>Abundantum</h1>
     <p>Preguntame y te responderé.</p>
 
@@ -7,15 +7,26 @@
 
     <div class="row"></div>
     <div>
-          <ul v-for="item in items" :key="item.id">
-            <mensaje :pregunta="item.pregunta" :msg="item.respuesta"/>
-            <div class="row"></div>
-          </ul>
-        </div>
+      <ul v-for="item in items" :key="item.id">
+        <mensaje :pregunta="item.pregunta" :msg="item.respuesta"/>
+        <div class="row"></div>
+      </ul>
+    </div>
+
+    <div id="chat">
+      <b-embed
+        type="iframe"
+        id="chat-embebed"
+        aspect="4by3"
+        src="https://console.dialogflow.com/api-client/demo/embedded/5570cfa9-df4e-4a81-a1f6-fd011cd66b73"
+      />
+    </div>
   </div>
 </template>
 
 <script>
+const $ = require('jquery');
+window.$ = $;
 import buscadorbar from "./BuscadorBar.vue";
 import mensaje from "./Mensaje.vue";
 
@@ -28,8 +39,7 @@ export default {
     return {
       texto: "",
       items: [
-        {"pregunta" : "Esto es una pruebas",
-        "respuesta" : "Esto es una respuesta"},
+        { pregunta: "Esto es una prueba", respuesta: "Esto es una respuesta" }
       ]
     };
   },
@@ -41,13 +51,14 @@ export default {
     getMensajes(pregunta) {
       this.items.unshift({
         pregunta: pregunta,
-        respuesta: "Hola soy una respuesta de ejemplo xD"
+        respuesta: "Hola, soy una respuesta de ejemplo. xD"
       });
-    },
+    }
   }
 };
 </script>
 <style scoped>
+
 h3 {
   margin: 40px 0 0;
 }
@@ -61,5 +72,11 @@ li {
 }
 a {
   color: #42b983;
+}
+
+#chat {
+  width: 50%;
+  margin: auto;
+  height: 600px;
 }
 </style>
